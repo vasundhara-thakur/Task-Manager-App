@@ -13,7 +13,7 @@ A simple and user-friendly web-based Task Manager app. Easily add, update, compl
 
 ## Live Demo
 
-<a href="projecttasksmanager.netlify.app">Click here</a>
+[🌐 Live demo on Netlify](https://your-netlify-app-url.netlify.app)
 
 ## Installation
 
