@@ -7,20 +7,18 @@ const pendingBtn = document.querySelector(".pending");
 const taskInput = document.querySelector(".task-input input");
 const saveBtn = document.querySelector(".save");
 
-// Track current edit task index, null means adding new task
 let editIndex = null;
 
-// Save task from input (button click or Enter key)
 function saveTaskFromInput() {
     const taskValue = taskInput.value.trim();
     if (taskValue !== "") {
         if (editIndex !== null) {
-            // Update existing task
+            
             tasks[editIndex].text = taskValue.charAt(0).toUpperCase() + taskValue.slice(1);
             editIndex = null;
             saveBtn.textContent = "Save";
         } else {
-            // Add new task
+            
             const newTask = {
                 text: taskValue.charAt(0).toUpperCase() + taskValue.slice(1),
                 status: "pending"
@@ -51,24 +49,21 @@ function saveTasks() {
 
 function renderTask(filterStatus) {
     const allTasksContainer = document.getElementById("all-tasks-container");
-    allTasksContainer.innerHTML = ""; // Clear tasks container
+    allTasksContainer.innerHTML = ""; 
 
     const filteredTasks = filterStatus ? tasks.filter(t => t.status === filterStatus) : tasks;
 
     filteredTasks.forEach((task) => {
-        // Create separate task container for each task
+       
         const taskContainer = document.createElement("div");
         taskContainer.classList.add("task-container");
 
-        // Task name span
         const taskText = document.createElement("span");
         taskText.textContent = task.text;
 
-        // Task item containing buttons
         const taskCard = document.createElement("div");
         taskCard.classList.add("task-item");
 
-        // Status button
         const statusBtn = document.createElement("button");
         statusBtn.classList.add("status");
         statusBtn.textContent = task.status === "pending" ? "Pending" : "Completed";
@@ -77,7 +72,7 @@ function renderTask(filterStatus) {
         statusBtn.addEventListener("click", () => taskStatus(taskIndex));
         taskCard.appendChild(statusBtn);
 
-        // Only create Edit button for pending tasks
+   
         if (task.status === "pending") {
             const editBtn = document.createElement("button");
             editBtn.textContent = "Edit";
@@ -86,18 +81,16 @@ function renderTask(filterStatus) {
             taskCard.appendChild(editBtn);
         }
 
-        // Delete button (always visible)
+     
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("delete");
         deleteBtn.addEventListener("click", () => deleteTask(taskIndex));
         taskCard.appendChild(deleteBtn);
 
-        // Append span and buttons container into task container
+
         taskContainer.appendChild(taskText);
         taskContainer.appendChild(taskCard);
-
-        // Append to main container
         allTasksContainer.appendChild(taskContainer);
     });
 }
@@ -124,7 +117,7 @@ function editTask(index) {
     taskInput.value = tasks[index].text;
     editIndex = index;
     saveBtn.textContent = "Update";
-    card.style.display = "block"; // Show input form if hidden
+    card.style.display = "block"; 
 }
 
 function deleteTask(index) {
@@ -133,7 +126,6 @@ function deleteTask(index) {
     renderTask();
 }
 
-// Sidebar button handlers
 homeBtn.addEventListener("click", () => {
     card.style.display = "block";
     renderTask();
@@ -149,6 +141,5 @@ pendingBtn.addEventListener("click", () => {
     renderTask("pending");
 });
 
-// Initial render
 card.style.display = "block";
 renderTask();
