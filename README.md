@@ -9,12 +9,11 @@ A simple and user-friendly web-based Task Manager app. Easily add, update, compl
 - Edit or update pending tasks (edit button removed for completed tasks)
 - Delete any task
 - Filter tasks to show All, Completed, or Pending from the sidebar
-- All tasks saved in browser localStorage, so your data persists
-- Responsive modern design
+- All tasks saved in browser localStorage, so your data persist
 
-## Demo
+## Live Demo
 
-![Screenshot](./Screenshot-2025-09-18-225339.jpg)
+projecttasksmanager.netlify.app
 
 ## Installation
 
