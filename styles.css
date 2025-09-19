@@ -1,0 +1,142 @@
+/* styles.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #ebf8ff;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #bfdbfe;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #dbeafe;
+  color: #010138;
+  transition: background 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #93c5fd;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.card {
+  background-color: #dbeafe;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.task-input {
+  display: flex;
+  gap: 10px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  color: #010138;
+  outline: none;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.task-input button:hover {
+  background-color: #1e40af;
+}
+
+/* Task list */
+.task-container {
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  border: 1px solid #bfdbfe;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.task-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline; 
+  gap: 0.5em;
+}
+
+.task-container span {
+  color: #010138;
+}
+
+.task-item button {
+  padding: 5px 15px;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+  background: #fff;
+  color: #2563eb;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.task-item button:hover {
+  background: #2563eb;
+  color: #fff;
+}
