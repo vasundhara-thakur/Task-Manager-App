@@ -141,45 +141,66 @@ body {
   color: #fff;
 }
 
+/* Keep your existing base styles ... */
+
+/* Improvements for mobile responsiveness */
 @media (max-width: 768px) {
-  .main, .sidebar {
+  body {
+    flex-direction: column; /* stack sidebar and main vertically */
+  }
+
+   .main {
     width: 100%;
-    padding: 10px;
+    padding: 10px 15px;
   }
 
   .sidebar {
-    order: 2;
+    display: none; /* sidebar below main */
   }
 
   .main {
     order: 1;
   }
 
+  /* Task container full width */
   .task-container {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Stack task text and buttons vertically */
+  .task-container {
+    display: flex;
     flex-direction: column;
+    gap: 8px;
   }
 
+  /* Task item buttons layout */
   .task-item {
-    flex-wrap: wrap;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
+  /* Buttons spacing */
   .task-item button {
     margin-top: 5px;
+    flex: 1 1 auto; /* allow buttons to grow */
+    min-width: 80px; /* avoid too small buttons */
   }
-  
-  .task-input input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
+
+  /* Input and save button stacked */
   .task-input {
     flex-direction: column;
+    gap: 10px;
     align-items: stretch;
   }
-  
+
+  .task-input input,
   .save {
     width: 100%;
+    box-sizing: border-box;
   }
 }
-
